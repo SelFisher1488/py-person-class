@@ -8,14 +8,14 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    person_instances = [Person(person["name"], person["age"]) for person in people]
+    persons_list = [Person(person["name"], person["age"]) for person in people]
 
     for index, person in enumerate(people):
         if person.get("wife"):
             wife_name = person["wife"]
-            person_instances[index].wife = Person.people[wife_name]
+            persons_list[index].wife = Person.people[wife_name]
         if person.get("husband"):
             husband_name = person["husband"]
-            person_instances[index].husband = Person.people[husband_name]
+            persons_list[index].husband = Person.people[husband_name]
 
-    return person_instances
+    return persons_list
